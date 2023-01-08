@@ -10,7 +10,7 @@ namespace MahmoudNZWalks.API.Data
 
         }
 
-        public DbSet<Region> Region { get; set; }
+        public DbSet<Region> Regions { get; set; }
         public DbSet<Walk> Walks { get; set; }
         public DbSet <WalkDiffeculty> WalkDiffeculty { get; set; }
 

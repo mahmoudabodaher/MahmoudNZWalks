@@ -4,6 +4,7 @@ using MahmoudNZWalks.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MahmoudNZWalks.API.Migrations
 {
     [DbContext(typeof(MahmoudNZWalksDbContext))]
-    partial class MahmoudNZWalksDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230108110515_UpdateTheTableName")]
+    partial class UpdateTheTableName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

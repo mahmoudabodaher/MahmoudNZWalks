@@ -1,4 +1,5 @@
 using MahmoudNZWalks.API.Data;
+using MahmoudNZWalks.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,11 +10,20 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // Inject the DBContext
 builder.Services.AddDbContext<MahmoudNZWalksDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MahmoudNZWalks"));
 });
+
+// Inject every single repository
+builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+
+// Inject the Auto mapper
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
 
 
 var app = builder.Build();

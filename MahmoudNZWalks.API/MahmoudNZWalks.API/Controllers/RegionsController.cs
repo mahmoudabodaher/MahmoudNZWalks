@@ -65,12 +65,14 @@ namespace MahmoudNZWalks.API.Controllers
         public async Task<IActionResult> AddRegionAsync(AddRegionRequest addRegionRequest)
         {
 
-          //  var valid = ;
+          ////  var valid = ;
 
-            if (!ValidateAddRegionRequest(addRegionRequest))
-            {
-                return BadRequest(ModelState);
-            }
+          //  if (!ValidateAddRegionRequest(addRegionRequest))
+          //  {
+          //      return BadRequest(ModelState);
+          //  }
+
+
             // convert request to domain model 
             var regionDBModel = new Region()
             {

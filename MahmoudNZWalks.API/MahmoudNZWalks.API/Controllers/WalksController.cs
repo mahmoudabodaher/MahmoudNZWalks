@@ -59,7 +59,6 @@ namespace MahmoudNZWalks.API.Controllers
               return  BadRequest(ModelState);
             }
 
-
             var walkModel = new Walk()
             {
                 Lenght = addWalkRequest.Lenght,
@@ -130,23 +129,27 @@ namespace MahmoudNZWalks.API.Controllers
 
         private async Task<bool> ValidateAddWalkRequest(AddWalkRequest addWalkRequest)
         {
-            //Normal Validators
+            //  Will leave the remaining of the validations here in this function and
+            //  in this case we can depend on both of them Fluent and normal Function
 
-            if (addWalkRequest == null)
-            {
-                ModelState.AddModelError(nameof(AddWalkRequest), $"Add Walk Data is required");
-                return false;
-            }
-            if (addWalkRequest.Lenght <= 0)
-            {
-                ModelState.AddModelError(nameof(AddWalkRequest.Lenght), $"{nameof(addWalkRequest.Lenght)} cannot be empty");
 
-            }
-            if (string.IsNullOrWhiteSpace(addWalkRequest.Name))
-            {
-                ModelState.AddModelError(nameof(AddWalkRequest.Name), $"{nameof(addWalkRequest.Name)} cannot be empty");
+            ////Normal Validators
 
-            }
+            //if (addWalkRequest == null)
+            //{
+            //    ModelState.AddModelError(nameof(AddWalkRequest), $"Add Walk Data is required");
+            //    return false;
+            //}
+            //if (addWalkRequest.Lenght <= 0)
+            //{
+            //    ModelState.AddModelError(nameof(AddWalkRequest.Lenght), $"{nameof(addWalkRequest.Lenght)} cannot be empty");
+
+            //}
+            //if (string.IsNullOrWhiteSpace(addWalkRequest.Name))
+            //{
+            //    ModelState.AddModelError(nameof(AddWalkRequest.Name), $"{nameof(addWalkRequest.Name)} cannot be empty");
+
+            //}
 
 
             var region = await _regionRepository.GetAsync(addWalkRequest.RegionID);

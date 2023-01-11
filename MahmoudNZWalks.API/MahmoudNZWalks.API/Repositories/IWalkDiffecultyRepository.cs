@@ -6,5 +6,8 @@ namespace MahmoudNZWalks.API.Repositories
     {
         Task<IEnumerable<WalkDiffeculty>> GetAllAsync();
         Task<WalkDiffeculty> GetByIDAsync(Guid id);
+        Task<WalkDiffeculty> AddWalkDiffecultyAsync(WalkDiffeculty walkDiffeculty);
+        Task<WalkDiffeculty> UpdateWalkDiffecultyAsync(Guid id, WalkDiffeculty walkDiffeculty);
+        Task<WalkDiffeculty> DeleteWalkDiffecultyAsync(Guid id);
     }
 }
